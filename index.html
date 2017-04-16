@@ -103,36 +103,21 @@
 </body>
 
 <script>
-var myscore=0;
-var oscore=0;
-var ochoice=0;
-var flag=0;
+var myscore=0;//holds ur score
+var oscore=0;//holds opponent's score
+var ochoice=0;//holds the numeric value of the choice of opponent
+var flag=0; //used to opt for a random choice if the user has not taken his turn
+
+
 $(function(){
 
-	//var person = prompt("Please enter your name", "");
-
-	  //document.getElementById("name").innerHTML ="Hello "+person+"! Lets Play";
 
 
 
-	$('.mstone').hide();
-
-	$('.mpaper').hide();
-
-	$('.mscissor').hide();
-
-	$('.ostone').hide();
-
-	$('.opaper').hide();
-
-	$('.oscissor').hide();
-
-
-
-
+// on play again click
 $('.btagain').click(function(){
 
-	
+	//hide back the contents again
 	$('.mstone').hide();
 
 	$('.mpaper').hide();
@@ -146,55 +131,14 @@ $('.btagain').click(function(){
 	$('.oscissor').hide();
 
 	 var rand=Math.floor(Math.random() * 10)+1;
-
+// opting for a random number to select an option for opponent's turn
 	 ochoice=rand%3 +1;
 
+//audio of stone , paper and scissors
+	var audio=document.getElementById("audio");
+	audio.play();
+
 });
-
-
-	$('.btstone').click(function(){
-		$('.mstone').show();
-		flag=1;
-		if(ochoice==3)
-			myscore++;
-		if(ochoice==2)
-			oscore++;
-			document.getElementById("me").innerHTML =myscore;
-			document.getElementById("opp").innerHTML =oscore;
-
-	});
-
-	$('.btpaper').click(function(){
-		$('.mpaper').show();
-			flag=1;
-			if(ochoice==1)
-				myscore++;
-			if(ochoice==3)
-				oscore++;
-
-			document.getElementById("me").innerHTML =myscore;
-			document.getElementById("opp").innerHTML =oscore;
-
-
-	});
-
-	$('.btscissor').click(function(){
-		$('.mscissor').show();
-			flag=1;
-			if(ochoice==2)
-				myscore++;
-			if(ochoice==1)
-				oscore++;
-
-			document.getElementById("me").innerHTML =myscore;
-			document.getElementById("opp").innerHTML =oscore;
-
-
-
-	});
-
-
-
 
 
 $('.btagain').click(function(){
@@ -252,12 +196,6 @@ function explode(){
 });
 
 
-$('.btagain').click(function(){
-
-	var audio=document.getElementById("audio");
-	audio.play();
-});
-
 
 });
 
@@ -276,6 +214,54 @@ var interval = setInterval(function() {
 }, 1000);
 
 });
+
+
+
+	$('.btstone').click(function(){
+		$('.mstone').show();
+		flag=1;
+		if(ochoice==3)
+			myscore++;
+		if(ochoice==2)
+			oscore++;
+			document.getElementById("me").innerHTML =myscore;
+			document.getElementById("opp").innerHTML =oscore;
+
+	});
+
+	$('.btpaper').click(function(){
+		$('.mpaper').show();
+			flag=1;
+			if(ochoice==1)
+				myscore++;
+			if(ochoice==3)
+				oscore++;
+
+			document.getElementById("me").innerHTML =myscore;
+			document.getElementById("opp").innerHTML =oscore;
+
+
+	});
+
+	$('.btscissor').click(function(){
+		$('.mscissor').show();
+			flag=1;
+			if(ochoice==2)
+				myscore++;
+			if(ochoice==1)
+				oscore++;
+
+			document.getElementById("me").innerHTML =myscore;
+			document.getElementById("opp").innerHTML =oscore;
+
+
+
+	});
+
+
+
+
+
 
 
 
