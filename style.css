@@ -30,3 +30,6 @@ svg {
   stroke-dashoffset: 440;
   transition: all 1s linear;
 }
+.form-spacing-top{
+	margin-top:30px;
+}

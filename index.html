@@ -63,9 +63,9 @@
 			<div class="row">
 		            <input type="button" class="btn btn-primary btstone" value="Stone">
 
-	              	<input type="button" class="btn btn-primary btpaper" value="Paper">
+	              	<input type="button" class="btn btn-default btpaper" value="Paper">
 
-	                <input type="button" class="btn btn-primary btscissor" value="Scissor">
+	                <input type="button" class="btn btn-danger btscissor" value="Scissor">
 						<br>
 
 	                <input type="button" class="btn btn-success btagain" value="lets Play" style="margin-left: 55px">
@@ -73,10 +73,10 @@
 	 	</div>
 	 </div>
 </div>
-<div class="row">
+<div class="row  form-spacing-top">
 	<div class="col-md-6 col-md-offset-3">
 
-			<table class="table table-bordered">
+			<table class="table table-bordered table table-striped">
 			  <THEAD>
 			  	<th>You</th>
 			  	<th>Opponent</th>
@@ -219,6 +219,8 @@ var interval = setInterval(function() {
 
 	$('.btstone').click(function(){
 		$('.mstone').show();
+		if(flag!=1)
+		{
 		flag=1;
 		if(ochoice==3)
 			myscore++;
@@ -226,11 +228,13 @@ var interval = setInterval(function() {
 			oscore++;
 			document.getElementById("me").innerHTML =myscore;
 			document.getElementById("opp").innerHTML =oscore;
+		}
 
 	});
 
 	$('.btpaper').click(function(){
 		$('.mpaper').show();
+			if(flag!=1){
 			flag=1;
 			if(ochoice==1)
 				myscore++;
@@ -239,12 +243,14 @@ var interval = setInterval(function() {
 
 			document.getElementById("me").innerHTML =myscore;
 			document.getElementById("opp").innerHTML =oscore;
+		}
 
 
 	});
 
 	$('.btscissor').click(function(){
 		$('.mscissor').show();
+		if(flag!=1){
 			flag=1;
 			if(ochoice==2)
 				myscore++;
@@ -253,7 +259,7 @@ var interval = setInterval(function() {
 
 			document.getElementById("me").innerHTML =myscore;
 			document.getElementById("opp").innerHTML =oscore;
-
+		}
 
 
 	});
